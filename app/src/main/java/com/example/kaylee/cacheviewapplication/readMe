@@ -1,0 +1,6 @@
+1.截屏的代码必须在界面绘制完成后执行，这里我在activity的onWindowFocusChanged方法中调用，确保了界面绘制完成了。
+2.ScrollView的截屏，使用的是如下方式：
+Bitmap bitmap = Bitmap.createBitmap(scrollView.getWidth(), h, Bitmap.Config.RGB_565);
+Canvas canvas = new Canvas(bitmap);
+scrollView.draw(canvas);
+将srollView绘制在我们使用bitmap创建的画布上
